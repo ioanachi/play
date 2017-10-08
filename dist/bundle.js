@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n<div class=\"container\">\n<div class=\"btncontainer\">\n\n</div>\n  <button type=\"button\" class=\"btn\" name=\"button\">Stay away from me</button>\n</div>\n\n\n\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
+module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n    <div class=\"container\">\n    \t\t<h1>Click the button</h1>\n    \t\t<div id=\"runaway-container\">\n    \t\t\t<button id=\"runaway\">Click me</button>\n    \t\t</div>\n    \t</div>\n\n\n\n      <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js\"></script>\n    \t<script src=\"main.js\"></script>\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container .btncontainer {\n      background: red;\n      position: absolute;\n      width: 150px;\n      margin: 0 auto;\n      margin-top: 100px; }\n    body .container .btn {\n      width: 150px; }\n", ""]);
+exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container h1 {\n      text-align: center; }\n    body .container #runaway-container {\n      position: absolute;\n      width: 150px;\n      margin: 100px auto 0;\n      z-index: 2px; }\n    body .container #runaway {\n      width: 150px; }\n", ""]);
 
 // exports
 
@@ -695,17 +695,18 @@ $("document").ready(function () {
     init: function init() {
       this.attachEvents();
     },
+
     attachEvents: function attachEvents() {
-      $('btncontainer').on('hover', this.flyAway);
-      $('btn').on('click', this.showWin);
+      $('#runaway-container').on('hover', this.flyAway);
+      // $('#runaway').on('click', this.showWin);
     },
 
     flyAway: function flyAway(e) {
-      mLeft = Math.random() * 300;
-      mTop = Math.random() * 300;
+      var mLeft = Math.random() * 300;
+      var mTop = Math.random() * 300;
 
-      $('btncontainer').css('margin-left', mLeft);
-      $('btncontainer').css('margin-top', mTop);
+      $('#runaway').css('margin-left', mLeft);
+      $('#runaway').css('margin-top', mTop);
     },
 
     showWin: function showWin(e) {

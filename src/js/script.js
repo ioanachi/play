@@ -4,24 +4,24 @@ $("document").ready(function() {
   	init: function() {
   		this.attachEvents();
   	},
+
   	attachEvents: function() {
-  		$('btncontainer').on('hover', this.flyAway);
-  		$('btn').on('click', this.showWin);
+  		$('#runaway-container').on('hover', this.flyAway);
+  		// $('#runaway').on('click', this.showWin);
   	},
 
   	flyAway: function(e) {
-  		mLeft = Math.random() * 300;
-  		mTop = Math.random() * 300;
+  		var mLeft = Math.random() * 300;
+  		var mTop = Math.random() * 300;
 
-  		$('btncontainer').css('margin-left', mLeft);
-  		$('btncontainer').css('margin-top', mTop);
+  		$('#runaway').css('margin-left', mLeft);
+  		$('#runaway').css('margin-top', mTop);
   	},
 
+  	showWin: function(e) {
+  		alert('Nice! Here, have a cookie!');
+  	}
+  };
 
-  showWin: function(e) {
-		alert('Nice! Here, have a cookie!');
-	}
-};
-
-stupidButton.init();
+  stupidButton.init();
 });
