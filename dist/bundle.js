@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n<div class=\"container\">\n  <div class=\"row\">\n<div class=\"col-lg-12 center\">\n  <button type=\"button\" class=\"btn\" name=\"button\">Stay away from me</button>\n</div>\n\n\n  </div>\n</div>\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
+module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n<div class=\"container\">\n<div class=\"btncontainer\">\n\n</div>\n  <button type=\"button\" class=\"btn\" name=\"button\">Stay away from me</button>\n</div>\n\n\n\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body .center {\n  align-items: center; }\n  body .center .button {\n    align: center; }\n\nbody.right {\n  right: 300px; }\n", ""]);
+exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container .btncontainer {\n      background: red;\n      position: absolute;\n      width: 150px;\n      margin: 0 auto;\n      margin-top: 100px; }\n    body .container .btn {\n      width: 150px; }\n", ""]);
 
 // exports
 
@@ -691,13 +691,29 @@ exports.push([module.i, "body .center {\n  align-items: center; }\n  body .cente
 
 var $ = __webpack_require__(16);
 $("document").ready(function () {
-    $('btn').mouseover(function () {
+  var stupidButton = {
+    init: function init() {
+      this.attachEvents();
+    },
+    attachEvents: function attachEvents() {
+      $('btncontainer').on('hover', this.flyAway);
+      $('btn').on('click', this.showWin);
+    },
 
-        $(this).animate({
-            right: "50px"
+    flyAway: function flyAway(e) {
+      mLeft = Math.random() * 300;
+      mTop = Math.random() * 300;
 
-        });
-    });
+      $('btncontainer').css('margin-left', mLeft);
+      $('btncontainer').css('margin-top', mTop);
+    },
+
+    showWin: function showWin(e) {
+      alert('Nice! Here, have a cookie!');
+    }
+  };
+
+  stupidButton.init();
 });
 
 /***/ }),

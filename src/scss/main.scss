@@ -1,11 +1,22 @@
 body {
-  .center {
-    align-items: center;
-    .button{
-      align:center;
-    }
-  }
-  &.right{
-    right:300px;
-  }
+	background: #1d1f20;
+	color: white;
+
+
+.container {
+	width: 100%;
+
+
+.btncontainer {
+  background: red;
+	position: absolute;
+	width: 150px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.btn {
+	width: 150px;
+}
+}
 }
