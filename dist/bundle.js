@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n    <div class=\"container\">\n    \t\t<h1>Click the button</h1>\n    \t\t<div id=\"runaway-container\">\n    \t\t\t<button id=\"runaway\">Click me</button>\n    \t\t</div>\n    \t</div>\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
+module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n    <div class=\"container\">\n    \t\t<h1>Click the button</h1>\n    \t\t<div class=\"button-container\">\n    \t\t\t<button class=\"button\">Click me</button>\n    \t\t</div>\n    \t</div>\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container h1 {\n      text-align: center; }\n    body .container #runaway-container {\n      position: absolute;\n      width: 150px;\n      margin: 100px auto 0;\n      z-index: 2px; }\n    body .container #runaway {\n      width: 150px; }\n", ""]);
+exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container h1 {\n      text-align: center; }\n    body .container .button-container {\n      position: absolute;\n      width: 150px;\n      margin: 100px auto 0;\n      z-index: 2px; }\n      body .container .button-container .button {\n        width: 150px; }\n", ""]);
 
 // exports
 
@@ -715,11 +715,36 @@ $("document").ready(function () {
   // };
   //
   // stupidButton.init();
+  console.log("marsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+
+  // onmousemove = function(e){console.log("mouse location:",e.clientX , e.clientY)}
+  $("#runaway").on('hover', this.moveAway);
 
   onmousemove = function onmousemove(e) {
-    console.log("mouse location:", e.clientX, e.clientY);
+    // mouse posittion
+    var mousex = e.clientX;
+    var mousey = e.clientY;
+    console.log("mouse location:", mousex, mousey);
+
+    // button position
+    var y = $("button").position();
+    var axax = y.left + 75;
+    var axay = y.top + 75;
+    console.log("button position:", axax, axay);
+    var distx = mousex - axax;
+    var disty = mousey - axay;
+    console.log("distance between M-B:", distx, disty);
+    if (disty < 20 || distx < 20) {
+      var mLeft = Math.random() * 300;
+      var mTop = Math.random() * 300;
+      console.log(mLeft, mTop);
+
+      $("button").css('margin-top', mTop);
+      $("button").css('margin-left', mLeft);
+    }
   };
-  $("#runaway").on('hover', this.moveAway);
+
+  onmousemove();
 });
 
 /***/ }),

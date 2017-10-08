@@ -9,15 +9,15 @@ body {
       text-align: center;
     }
 
-    #runaway-container {
+    .button-container {
       position: absolute;
       width: 150px;
       margin: 100px auto 0;
       z-index: 2px;
-    }
 
-    #runaway {
-      width: 150px;
+      .button {
+        width: 150px;
+      }
     }
   }
 }
