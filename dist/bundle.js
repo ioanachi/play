@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n    <div class=\"container\">\n    \t\t<h1>Click the button</h1>\n    \t\t<div id=\"runaway-container\">\n    \t\t\t<button id=\"runaway\">Click me</button>\n    \t\t</div>\n    \t</div>\n\n\n\n      <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js\"></script>\n    \t<script src=\"main.js\"></script>\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
+module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n    <div class=\"container\">\n    \t\t<h1>Click the button</h1>\n    \t\t<div id=\"runaway-container\">\n    \t\t\t<button id=\"runaway\">Click me</button>\n    \t\t</div>\n    \t</div>\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
 
 /***/ }),
 /* 6 */
@@ -691,30 +691,35 @@ exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  bo
 
 var $ = __webpack_require__(16);
 $("document").ready(function () {
-  var stupidButton = {
-    init: function init() {
-      this.attachEvents();
-    },
+  // var stupidButton = {
+  // 	init: function() {
+  // 		this.attachEvents();
+  // 	},
+  //
+  // 	attachEvents: function() {
+  // 		$('#runaway-container').on('hover', this.flyAway);
+  // 		// $('#runaway').on('click', this.showWin);
+  // 	},
+  //
+  // 	flyAway: function(e) {
+  // 		var mLeft = Math.random() * 300;
+  // 		var mTop = Math.random() * 300;
+  //
+  // 		$('#runaway-container').css('margin-left', mLeft);
+  // 		$('#runaway-container').css('margin-top', mTop);
+  // 	},
+  //
+  // 	showWin: function(e) {
+  // 		alert('Nice! Here, have a cookie!');
+  // 	}
+  // };
+  //
+  // stupidButton.init();
 
-    attachEvents: function attachEvents() {
-      $('#runaway-container').on('hover', this.flyAway);
-      // $('#runaway').on('click', this.showWin);
-    },
-
-    flyAway: function flyAway(e) {
-      var mLeft = Math.random() * 300;
-      var mTop = Math.random() * 300;
-
-      $('#runaway').css('margin-left', mLeft);
-      $('#runaway').css('margin-top', mTop);
-    },
-
-    showWin: function showWin(e) {
-      alert('Nice! Here, have a cookie!');
-    }
+  onmousemove = function onmousemove(e) {
+    console.log("mouse location:", e.clientX, e.clientY);
   };
-
-  stupidButton.init();
+  $("#runaway").on('hover', this.moveAway);
 });
 
 /***/ }),
