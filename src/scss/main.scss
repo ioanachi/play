@@ -1,0 +1,11 @@
+body {
+  .center {
+    align-items: center;
+    .button{
+      align:center;
+    }
+  }
+  &.right{
+    right:300px;
+  }
+}

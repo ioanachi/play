@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title></title>\r\n</head>\r\n\r\n<body>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12\">\r\n        <h3>JQ Tic Tac Toe</h3>\r\n        <table>\r\n          <tr>\r\n            <td class=\"a1\"></td>\r\n            <td class=\"a2\"></td>\r\n            <td class=\"a3\"></td>\r\n          </tr>\r\n          <tr>\r\n            <td class=\"b1\"></td>\r\n            <td class=\"b2\"></td>\r\n            <td class=\"b3\"></td>\r\n          </tr>\r\n          <tr>\r\n            <td class=\"c1\"></td>\r\n            <td class=\"c2\"></td>\r\n            <td class=\"c3\"></td>\r\n          </tr>\r\n        </table>\r\n<h2></h2>\r\n<button type=\"button\" name=\"button\">Start Over</button>\r\n    </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <script src=\"./dist/commons.js\"></script>\r\n    <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n<div class=\"container\">\n  <div class=\"row\">\n<div class=\"col-lg-12 center\">\n  <button type=\"button\" class=\"btn\" name=\"button\">Stay away from me</button>\n</div>\n\n\n  </div>\n</div>\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body h3 {\n  margin-left: 90px; }\n\nbody table {\n  margin-left: 40px;\n  table-layout: fixed;\n  display: table; }\n  body table tr td {\n    min-width: 100px;\n    height: 100px;\n    align-items: center;\n    align-content: center;\n    text-align: center;\n    border: 3px solid;\n    font-size: 40px;\n    cursor: pointer; }\n    body table tr td:nth-child(1) {\n      border-left: 0; }\n    body table tr td:nth-child(3) {\n      border-right: 0; }\n    body table tr td.clX {\n      background: blue; }\n    body table tr td.clO {\n      background: #95fc00; }\n  body table tr:nth-child(1) td {\n    border-top: 0; }\n  body table tr:nth-child(3) td {\n    border-bottom: 0; }\n", ""]);
+exports.push([module.i, "body .center {\n  align-items: center; }\n  body .center .button {\n    align: center; }\n\nbody.right {\n  right: 300px; }\n", ""]);
 
 // exports
 
@@ -691,82 +691,13 @@ exports.push([module.i, "body h3 {\n  margin-left: 90px; }\n\nbody table {\n  ma
 
 var $ = __webpack_require__(16);
 $("document").ready(function () {
-  var va1,
-      va2,
-      va3,
-      vb1,
-      vb2,
-      vb3,
-      vc1,
-      vc2,
-      vc3 = '';
+    $('btn').mouseover(function () {
 
-  function vales() {
-    va1 = $(".a1").html();
-    va2 = $(".a2").html();
-    va3 = $(".a3").html();
-    vb1 = $(".b1").html();
-    vb2 = $(".b2").html();
-    vb3 = $(".b3").html();
-    vc1 = $(".c1").html();
-    vc2 = $(".c2").html();
-    vc3 = $(".c3").html();
-  }
+        $(this).animate({
+            right: "50px"
 
-  function combinationarr() {
-    var arr = [[va1, va2, va3], [vb1, vb2, vb3], [vc1, vc2, vc3], [va1, vb1, vc1], [va2, vb2, vc2], [va3, vb3, vc3], [va1, vb2, vc3], [va3, vb2, vc1]];
-
-    // console.log(arr);
-    // i in interiorul lui arr
-    for (var i = 0; i < arr.length; i++) {
-      // z in interiorul arrayurilor
-      for (var z = 0; z < arr[i].length; z++) {
-        // console.log('['+i+']['+z+']=' + arr[i][z]);
-        console.log('[' + i + ']=' + arr[i]);
-        // if (arr[i][z] == "X") {
-        //
-        //   console.log(arr[i][z]);
-        //
-        //    $("h2").html(" X wins");
-        //    $("h2").addClass("clX");
-        // }
-      }
-      // --------------------------VARIANTA CARE FUNCTIONEAZA DUPA PRIMUL FOR______________________
-      // var one = arr[i][0];
-      // var two = arr[i][1];
-      // var three = arr[i][2];
-      // if (one == "X" && three == "X" && two == "X") {
-      //   $("h2").html(" X wins").addClass("clX");
-      // }
-      // else if (one == "0" && three == "0" && two == "0") {
-      //   $("h2").html(" 0 wins").addClass("clO");
-      // }
-      // else {
-      //   $("h2").html(" it's a  tie");
-      //
-      // }
-    }
-  }
-  var isx = true;
-  $("td").click(function () {
-    // vales();
-    var cval = $(this).html();
-    if (!(cval == "X" || cval == "0")) {
-      if (isx) {
-        $(this).html("X");
-        isx = false;
-      } else {
-        $(this).html("0");
-        isx = true;
-      }
-    }
-    vales();
-    console.log(va1, va2);
-    combinationarr();
-  });
-  $("button").click(function () {
-    $("td").html(" ");
-  });
+        });
+    });
 });
 
 /***/ }),
