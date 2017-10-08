@@ -39,7 +39,7 @@ $("document").ready(function() {
     // button position
     var y = $("button").position()
     var axax = y.left + 150;
-    var axay = y.top + 150;
+    var axay = y.top + 40;
     console.log("button position:", axax, axay);
     var distx = mousex - axax;
     var dtx = axax - mousex;
