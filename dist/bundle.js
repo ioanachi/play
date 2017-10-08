@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container h1 {\n      text-align: center; }\n    body .container .button-container {\n      position: absolute;\n      width: 150px;\n      margin: 100px auto 0;\n      z-index: 2px; }\n      body .container .button-container .button {\n        width: 150px; }\n", ""]);
+exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container h1 {\n      text-align: center; }\n    body .container .button-container {\n      position: absolute;\n      width: 150px;\n      margin: 100px auto 0;\n      z-index: 2px; }\n      body .container .button-container .button {\n        width: 150px;\n        height: 45px; }\n", ""]);
 
 // exports
 
@@ -732,20 +732,22 @@ $("document").ready(function () {
     var axay = y.top + 150;
     console.log("button position:", axax, axay);
     var distx = mousex - axax;
-    var dtx = axax - mousex;
-    var disty = mousey - axay;
+    // var dtx = axax - mousex;
+    // var disty = mousey - axay;
     var dty = axay - mousey;
 
-    console.log("distance between M-B:", distx, disty);
-    if (disty < 20 || distx < 20 || dtx < 200 || dty < 200) {
+    console.log("distance between M-B:", distx);
+    if (distx < 20 || dty < 200) {
       var mLeft = Math.random() * 300;
       var Le = Math.round(mLeft);
       var mTop = Math.random() * 300;
       var To = Math.round(mTop);
       console.log(Le, To, "fuckkkkkkkkkkkkkkkkkkkkkkkCttttttttttttttttttttt");
+      var mTo = To + dty;
+      var mLe = Le + distx;
 
       console.log(mLeft, mTop);
-      $("button").css('margin-top', To);
+      $("button").css('margin-top', mTo);
       $("button").css('margin-left', Le);
     }
   };
