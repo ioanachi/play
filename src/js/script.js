@@ -38,19 +38,25 @@ $("document").ready(function() {
 
     // button position
     var y = $("button").position()
-    var axax = y.left + 75;
-    var axay = y.top + 75;
+    var axax = y.left + 150;
+    var axay = y.top + 150;
     console.log("button position:", axax, axay);
     var distx = mousex - axax;
+    var dtx = axax - mousex;
     var disty = mousey - axay;
-    console.log("distance between M-B:", distx, disty);
-    if (disty < 20 || distx < 20) {
-      var mLeft = Math.random() * 300 ;
-      var mTop =  Math.random() * 300;
-      console.log(mLeft, mTop);
+    var dty = axay - mousey;
 
-      $("button").css('margin-top', mTop);
-      $("button").css('margin-left', mLeft);
+    console.log("distance between M-B:", distx, disty);
+    if (disty < 20 || distx < 20 || dtx <200 || dty <200) {
+      var mLeft = Math.random() * 300;
+      var Le = Math.round(mLeft);
+      var mTop = Math.random() * 300;
+      var To = Math.round(mTop);
+      console.log(Le, To, "fuckkkkkkkkkkkkkkkkkkkkkkkCttttttttttttttttttttt");
+
+      console.log(mLeft, mTop);
+      $("button").css('margin-top', To);
+      $("button").css('margin-left', Le);
 
     }
   }
