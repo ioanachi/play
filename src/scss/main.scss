@@ -1,24 +1,19 @@
 body {
-  background: #1d1f20;
   color: white;
+  min-height: 500px;
 
   .container {
     width: 100%;
+    left:0px;
+    rop:0px;
 
     h1 {
       text-align: center;
     }
-
-    .button-container {
+    .button{
       position: absolute;
-      width: 150px;
-      margin: 100px auto 0;
-      z-index: 2px;
-
-      .button {
-        width: 150px;
-        height: 45px;
-      }
+      color:#000;
     }
+
   }
 }
