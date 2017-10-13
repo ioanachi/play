@@ -1,5 +1,5 @@
 body {
-  background: #1d1f20;
+  background: #f000;
   color: white;
 
   .container {
@@ -9,16 +9,13 @@ body {
       text-align: center;
     }
 
-    .button-container {
-      position: absolute;
-      width: 150px;
-      margin: 100px auto 0;
-      z-index: 2px;
 
       .button {
         width: 150px;
         height: 45px;
-      }
+        position:absolute;
+        z-index: 2px;
+        padding: 0;
     }
   }
 }

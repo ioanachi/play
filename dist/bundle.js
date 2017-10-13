@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background: #1d1f20;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container h1 {\n      text-align: center; }\n    body .container .button-container {\n      position: absolute;\n      width: 150px;\n      margin: 100px auto 0;\n      z-index: 2px; }\n      body .container .button-container .button {\n        width: 150px;\n        height: 45px; }\n", ""]);
+exports.push([module.i, "body {\n  background: #f000;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container h1 {\n      text-align: center; }\n    body .container .button {\n      width: 150px;\n      height: 45px;\n      position: absolute;\n      z-index: 2px;\n      padding: 0; }\n", ""]);
 
 // exports
 
@@ -715,44 +715,71 @@ $("document").ready(function () {
   // };
   //
   // stupidButton.init();
-  console.log("marsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 
   // onmousemove = function(e){console.log("mouse location:",e.clientX , e.clientY)}
-  $("#runaway").on('hover', this.moveAway);
 
-  onmousemove = function onmousemove(e) {
-    // mouse posittion
+
+  // onmousemove = function(e) {
+  // mouse posittion
+
+  // button position
+  // console.log(mLeft, mTop);
+  //       $("body").mousemove(function (){
+  //         var mousex = e.clientX;
+  //         var mousey = e.clientY;
+  //         console.log("mouse location:", mousex, mousey)
+  //         var y = $("button").position()
+  //         var axax = y.left + 150;
+  //         var axay = y.top + 40;
+  //         console.log("button position:", axax, axay);
+  //         var distx = mousex - axax;
+  //         var dtx = axax - mousex;
+  //         var disty = mousey - axay;
+  //         var dty = axay - mousey;
+  //
+  //         console.log("distance between M-B:", distx, disty);
+  //         if ((disty < 20 && distx < 20) || ( dtx <200 && dty <200)) {
+  //           var mLeft = Math.random() * 300;
+  //           var Le = Math.round(mLeft);
+  //           var mTop = Math.random() * 300;
+  //           var To = Math.round(mTop);
+  //           console.log(Le, To, "tttttttttttttttttttttttttttttttttttt");
+  //           var mTo = To + disty ;
+  //           var mLe = Le + distx ;
+  //
+  // y.left = mTo;
+  // y.right= mLe;
+  //
+  //       }
+  //       // $("button").css('margin-left', Le);
+  //
+  //     });
+  //   }
+  //
+  //   onmousemove();
+
+
+  $("body").mousemove(function (e) {
     var mousex = e.clientX;
     var mousey = e.clientY;
+
     console.log("mouse location:", mousex, mousey);
+    var paxax = $("button").position().left - 20;
+    var paxay = $("button").position().top - 20;
+    var pax = $("button").position().left + 150 + 20;
+    var pay = $("button").position().top + 40 + 20;
+    console.log(paxax, paxay, pax, pay);
 
-    // button position
-    var y = $("button").position();
-    var axax = y.left + 150;
-    var axay = y.top + 150;
-    console.log("button position:", axax, axay);
-    var distx = mousex - axax;
-    var dtx = axax - mousex;
-    var disty = mousey - axay;
-    var dty = axay - mousey;
-
-    console.log("distance between M-B:", distx, disty);
-    if (disty < 20 || distx < 20 || dtx < 200 || dty < 200) {
+    if (mousex < paxax || mousey < paxay || mousex < pax || mousey < pay) {
       var mLeft = Math.random() * 300;
       var Le = Math.round(mLeft);
       var mTop = Math.random() * 300;
       var To = Math.round(mTop);
-      console.log(Le, To, "fuckkkkkkkkkkkkkkkkkkkkkkkCttttttttttttttttttttt");
-      var mTo = To + disty;
-      var mLe = Le + distx;
-
-      console.log(mLeft, mTop);
-      $("button").css('margin-top', mTo);
-      $("button").css('margin-left', Le);
+      console.log(Le, To, "tttttttttttttttttttttttttttttttttttt");
+      $("button").css('left', Le);
+      $("button").css('top', To);
     }
-  };
-
-  onmousemove();
+  });
 });
 
 /***/ }),
