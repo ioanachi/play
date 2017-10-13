@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n    <div class=\"container\">\n    \t\t<h1>Click the button</h1>\n    \t\t<div class=\"button-container\">\n    \t\t\t<button class=\"button\">Click me</button>\n    \t\t</div>\n    \t</div>\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
+module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title></title>\n  </head>\n  <body>\n\n    <div class=\"container\">\n    \t\t<h1>Click the button</h1>\n    \t\t\t<button class=\"button\">Click me</button>\n    \t</div>\n\n\n\n\n\n<script src=\"./dist/commons.js\"></script>\n<script src=\"./dist/bundle.js\"></script>\n  </body>\n</html>\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,11 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
+<<<<<<< HEAD
 exports.push([module.i, "body {\n  background: #f000;\n  color: white; }\n  body .container {\n    width: 100%; }\n    body .container h1 {\n      text-align: center; }\n    body .container .button {\n      width: 150px;\n      height: 45px;\n      position: absolute;\n      z-index: 2px;\n      padding: 0; }\n", ""]);
+=======
+exports.push([module.i, "body {\n  color: white;\n  min-height: 500px; }\n  body .container {\n    width: 100%;\n    left: 0px;\n    rop: 0px; }\n    body .container h1 {\n      text-align: center; }\n    body .container .button {\n      position: absolute;\n      color: #000; }\n", ""]);
+>>>>>>> 4d6de5ce03b548dde246d13863f1ef487cbbc72e
 
 // exports
 
@@ -717,6 +721,7 @@ $("document").ready(function () {
   // stupidButton.init();
 
   // onmousemove = function(e){console.log("mouse location:",e.clientX , e.clientY)}
+<<<<<<< HEAD
 
 
   // onmousemove = function(e) {
@@ -779,6 +784,102 @@ $("document").ready(function () {
       $("button").css('left', Le);
       $("button").css('top', To);
     }
+=======
+  // $("#runaway").on('hover', this.moveAway);
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+  }
+
+  $('body').mousemove(function (ev) {
+    // mouse posittion
+    var mousex = ev.clientX;
+    var mousey = ev.clientY;
+    var buttonPos = $(".button").position();
+    console.log(buttonPos);
+
+    var minMouseX = buttonPos.left - 20;
+    var minMouseY = buttonPos.top - 20;
+    var maxMouseX = buttonPos.left + 150 + 20;
+    var maxMouseY = buttonPos.top + 40 + 20;
+
+    if (mousex > minMouseX && mousex < maxMouseX && mousey > minMouseY && mousey < maxMouseY) {
+      var randX = getRandomInt(0, 500);
+      var randY = getRandomInt(0, 500);
+
+      console.log(randX + ' ' + randY);
+
+      $('.button').css('top', randY + 'px');
+      $('.button').css('left', randX + 'px');
+    }
+
+    //   console.log("mouse location:", mousex, mousey)
+    //
+    //   // button position
+    //   var y = $("button").position();
+    //   var axax = y.left + 150;
+    //   var axay = y.top + 40;
+    //   console.log("button position:", axax, axay);
+    //   var distx = mousex - axax;
+    //   var dtx = axax - mousex;
+    //   var disty = mousey - axay;
+    //   var dty = axay - mousey;
+    //
+    //   console.log("distance between M-B:", distx, disty);
+    //   if (disty < 20 || distx < 20 || dtx <200 || dty <200) {
+    //     var mLeft = Math.random() * 300;
+    //     var Le = Math.round(mLeft);
+    //     var mTop = Math.random() * 300;
+    //     var To = Math.round(mTop);
+    //     var mTo = To + disty ;
+    //     var mLe = Le + distx ;
+    //
+    //
+    //     console.log(mLeft, mTop);
+    //     $("button").css('margin-top', mTo);
+    //     $("button").css('margin-left', Le);
+    //
+    //   }
+    // });
+    //
+    //
+    //   var mymousemove = function(ev) {
+    //     // mouse posittion
+    //     var mousex = ev.clientX;
+    //     var mousey = ev.clientY;
+    //     console.log("mouse location:", mousex, mousey)
+    //
+    //     // button position
+    //     var y = $("button").position()
+    //     var axax = y.left + 150;
+    //     var axay = y.top + 40;
+    //     console.log("button position:", axax, axay);
+    //     var distx = mousex - axax;
+    //     var dtx = axax - mousex;
+    //     var disty = mousey - axay;
+    //     var dty = axay - mousey;
+    //
+    //     console.log("distance between M-B:", distx, disty);
+    //     if (disty < 20 || distx < 20 || dtx <200 || dty <200) {
+    //       var mLeft = Math.random() * 300;
+    //       var Le = Math.round(mLeft);
+    //       var mTop = Math.random() * 300;
+    //       var To = Math.round(mTop);
+    //       var mTo = To + disty ;
+    //       var mLe = Le + distx ;
+    //
+    //
+    //       console.log(mLeft, mTop);
+    //       $("button").css('margin-top', mTo);
+    //       $("button").css('margin-left', Le);
+    //
+    //     }
+    // }
+
+    // mymousemove();
+
+>>>>>>> 4d6de5ce03b548dde246d13863f1ef487cbbc72e
   });
 });
 
