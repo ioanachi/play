@@ -770,7 +770,7 @@ $("document").ready(function () {
     var pay = $("button").position().top + 40 + 20;
     console.log(paxax, paxay, pax, pay);
 
-    if (mousex < paxax || mousey < paxay || mousex < pax || mousey < pay) {
+    if (mousex > paxax && mousey > paxay && mousex < pax && mousey < pay) {
       var mLeft = Math.random() * 300;
       var Le = Math.round(mLeft);
       var mTop = Math.random() * 300;
