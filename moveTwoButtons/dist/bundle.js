@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta charset=\"utf-8\">\r\n    <title></title>\r\n  </head>\r\n  <body>\r\n\r\n    <div class=\"container\">\r\n    \t\t<h1>Click the button</h1>\r\n    \t\t\t<button class=\"button\">Drag me</button>\r\n    \t</div>\r\n\r\n\r\n\r\n\r\n\r\n<script src=\"./dist/commons.js\"></script>\r\n<script src=\"./dist/bundle.js\"></script>\r\n  </body>\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title></title>\r\n</head>\r\n\r\n<body>\r\n\r\n  <div class=\"container\">\r\n    <h1>Click the button</h1>\r\n    <button class=\"buttW\">Click me to drag both</button>\r\n\r\n    <button class=\"buttN\">Click me to do nothing</button>\r\n\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  color: white; }\n  body .container {\n    width: 100%;\n    left: 0px;\n    rop: 0px; }\n    body .container h1 {\n      text-align: center; }\n    body .container .button {\n      width: 150px;\n      height: 45px;\n      position: absolute;\n      z-index: 2px;\n      padding: 0;\n      margin: 0;\n      border: 0;\n      color: white;\n      background-color: red; }\n", ""]);
+exports.push([module.i, "body {\n  color: white; }\n  body .container {\n    width: 100%;\n    left: 0px;\n    rop: 0px; }\n    body .container h1 {\n      text-align: center; }\n    body .container .buttW {\n      width: 150px;\n      height: 45px;\n      position: absolute;\n      z-index: 2px;\n      padding: 0;\n      margin: 0;\n      border: 0;\n      color: white;\n      background-color: red; }\n    body .container .buttN {\n      width: 150px;\n      height: 45px;\n      position: absolute;\n      z-index: 2px;\n      padding: 0;\n      margin: 0;\n      border: 0;\n      color: white;\n      background-color: red;\n      left: 200px; }\n", ""]);
 
 // exports
 
@@ -691,11 +691,13 @@ exports.push([module.i, "body {\n  color: white; }\n  body .container {\n    wid
 
 var $ = __webpack_require__(16);
 $("document").ready(function () {
-
   var clicked = false;
   var difx;
   var dify;
-  var xbutton = $("button");
+  var xbutton = $(".buttW");
+  var buttN = $(".buttN");
+  var difBx;
+  var difBy;
 
   xbutton.mousedown(function (e) {
     clicked = true;
@@ -709,6 +711,12 @@ $("document").ready(function () {
     difx = mousex - posx;
     dify = mousey - posy;
     console.log("difference :", difx, dify);
+    var posButtonN = buttN.position();
+    var posxN = posButtonN.left;
+    var posyN = posButtonN.top;
+    difBx = posxN - posx;
+    difBy = posxN - posy;
+    console.log("difference betweent B :", difBx, difBy);
   });
 
   $("html").mousemove(function (e) {
@@ -721,8 +729,12 @@ $("document").ready(function () {
     var butposy = mouseY - dify;
     console.log("new position for the button:", butposx, butposy);
     if (clicked) {
+
+      var posN = butposx + difBx;
       xbutton.css("left", butposx);
       xbutton.css("top", butposy);
+      buttN.css("left", posN);
+      buttN.css("top", butposy);
     }
   });
   $("button").mouseup(function (e) {
