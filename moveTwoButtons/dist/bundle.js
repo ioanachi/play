@@ -735,7 +735,7 @@ $("document").ready(function () {
       xbutton.css("top", butposy);
       buttN.css("left", posN);
       buttN.css("top", butposy);
-    }
+    };
   });
   $("button").mouseup(function (e) {
     clicked = false;

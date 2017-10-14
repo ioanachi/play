@@ -1,12 +1,11 @@
 var $ = require("jquery");
 $("document").ready(function() {
+
   var clicked = false;
   var difx;
   var dify;
-  var xbutton = $(".buttW");
-  var buttN = $(".buttN");
-  var difBx;
-  var difBy;
+  var xbutton = $(".menu");
+
 
   xbutton.mousedown(function(e) {
     clicked = true;
@@ -20,12 +19,6 @@ $("document").ready(function() {
     difx = mousex - posx;
     dify = mousey - posy;
     console.log("difference :", difx, dify);
-    var posButtonN = buttN.position();
-    var posxN = posButtonN.left;
-    var posyN = posButtonN.top;
-    difBx = posxN - posx;
-    difBy = posxN - posy;
-    console.log("difference betweent B :", difBx, difBy);
   });
 
   $("html").mousemove(function(e) {
@@ -38,15 +31,13 @@ $("document").ready(function() {
     var butposy = mouseY - dify;
     console.log("new position for the button:", butposx, butposy);
     if (clicked) {
-
-      var posN = butposx + difBx;
       xbutton.css("left", butposx);
       xbutton.css("top", butposy);
-      buttN.css("left", posN);
-      buttN.css("top", butposy);
-    };
+    }
+
+
   });
-  $("button").mouseup(function(e) {
+  $(".menu").mouseup(function(e) {
     clicked = false;
 
 
