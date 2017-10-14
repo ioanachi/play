@@ -4,18 +4,18 @@ $("document").ready(function() {
   var clicked = false;
   var difx;
   var dify;
-  var xmenu = $("div");
+  var xfirst = $(".first");
 
 
-  xdiv.mousedown(function(e) {
+  xfirst.mousedown(function(e) {
     clicked = true;
     var mousex = e.clientX;
     var mousey = e.clientY;
-    var posdiv = xdiv.position();
-    var posx = posdiv.left;
-    var posy = posdiv.top;
+    var posfirst = xfirst.position();
+    var posx = posfirst.left;
+    var posy = posfirst.top;
     console.log("mouse position :", mousex, mousey);
-    console.log("div position :", posx, posy);
+    console.log("first position :", posx, posy);
     difx = mousex - posx;
     dify = mousey - posy;
     console.log("difference :", difx, dify);
@@ -27,18 +27,19 @@ $("document").ready(function() {
     console.log("--------------------mouse position :", mouseX, mouseY);
     console.log("====================difference position :", difx, dify);
 
-    var butposx = mouseX - difx;
-    var butposy = mouseY - dify;
-    console.log("new position for the div:", butposx, butposy);
+    var divposx = mouseX - difx;
+    var divposy = mouseY - dify;
+    console.log("new position for the first:", divposx, divposy);
     if (clicked) {
-      xdiv.css("left", butposx);
-      xdiv.css("top", butposy);
+      xfirst.css("left", divposx).addClass(".newpos");
+      xfirst.css("top", divposy).addClass(".newpos");
     }
 
 
   });
-  $("div").mouseup(function(e) {
+  $("first").mouseup(function(e) {
     clicked = false;
+    xfirst.removeClass(".newpos");
 
 
 

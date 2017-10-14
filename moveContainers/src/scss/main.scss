@@ -1,15 +1,29 @@
 body {
-  color: white;
+  color: black;
 
+  div {
+    height: 200px;
+    width: 200px;
 
-
-  .container {
-    width: 100%;
-    left:0px;
-    rop:0px;
-    h1 {
-      text-align: center;
+    &.first {
+      background-color: red;
+      border: 2px solid black;
     }
-      
+
+    &.second {
+      background-color: blue;
+      border: 2px solid black;
+    }
+
+    &.third {
+      background-color: yellow;
+      border: 2px solid black;
+    }
+    &.newpos{
+position: absolute;
+z-index: 2;
+
+
+    }
   }
 }

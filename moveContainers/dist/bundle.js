@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta charset=\"utf-8\">\r\n    <title></title>\r\n  </head>\r\n  <body>\r\n\r\n    <div class=\"container\">\r\n\r\n    \t</div>\r\n\r\n\r\n\r\n\r\n\r\n<script src=\"./dist/commons.js\"></script>\r\n<script src=\"./dist/bundle.js\"></script>\r\n  </body>\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>yf</title>\r\n</head>\r\n\r\n<body>\r\n\r\n\r\n      <div class=\"first\">\r\n\r\n\r\n      </div>\r\n      <div class=\"second\">\r\n\r\n      </div>\r\n      <div class=\"third\">\r\n\r\n      </div>\r\n      </div>\r\n\r\n\r\n\r\n\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  color: white; }\n  body .container {\n    width: 100%;\n    left: 0px;\n    rop: 0px; }\n    body .container h1 {\n      text-align: center; }\n", ""]);
+exports.push([module.i, "body {\n  color: black; }\n  body div {\n    height: 200px;\n    width: 200px; }\n    body div.first {\n      background-color: red;\n      border: 2px solid black; }\n    body div.second {\n      background-color: blue;\n      border: 2px solid black; }\n    body div.third {\n      background-color: yellow;\n      border: 2px solid black; }\n    body div.newpos {\n      position: absolute;\n      z-index: 2; }\n", ""]);
 
 // exports
 
@@ -695,17 +695,17 @@ $("document").ready(function () {
   var clicked = false;
   var difx;
   var dify;
-  var xmenu = $("div");
+  var xfirst = $(".first");
 
-  xdiv.mousedown(function (e) {
+  xfirst.mousedown(function (e) {
     clicked = true;
     var mousex = e.clientX;
     var mousey = e.clientY;
-    var posdiv = xdiv.position();
-    var posx = posdiv.left;
-    var posy = posdiv.top;
+    var posfirst = xfirst.position();
+    var posx = posfirst.left;
+    var posy = posfirst.top;
     console.log("mouse position :", mousex, mousey);
-    console.log("div position :", posx, posy);
+    console.log("first position :", posx, posy);
     difx = mousex - posx;
     dify = mousey - posy;
     console.log("difference :", difx, dify);
@@ -717,16 +717,17 @@ $("document").ready(function () {
     console.log("--------------------mouse position :", mouseX, mouseY);
     console.log("====================difference position :", difx, dify);
 
-    var butposx = mouseX - difx;
-    var butposy = mouseY - dify;
-    console.log("new position for the div:", butposx, butposy);
+    var divposx = mouseX - difx;
+    var divposy = mouseY - dify;
+    console.log("new position for the first:", divposx, divposy);
     if (clicked) {
-      xdiv.css("left", butposx);
-      xdiv.css("top", butposy);
+      xfirst.css("left", divposx).addClass(".newpos");
+      xfirst.css("top", divposy).addClass(".newpos");
     }
   });
-  $("div").mouseup(function (e) {
+  $("first").mouseup(function (e) {
     clicked = false;
+    xfirst.removeClass(".newpos");
   });
 });
 
