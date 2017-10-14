@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  color: black; }\n  body div {\n    height: 200px;\n    width: 200px;\n    position: absolute;\n    z-index: 2; }\n    body div.first {\n      background-color: red;\n      color: black;\n      border: 2px solid black; }\n    body div.second {\n      background-color: blue;\n      border: 2px solid black;\n      top: 200px;\n      color: black; }\n    body div.third {\n      background-color: yellow;\n      color: black;\n      border: 2px solid black;\n      top: 400px; }\n    body div.newpos {\n      z-index: 5; }\n    body div.middlepos {\n      z-index: 3; }\n", ""]);
+exports.push([module.i, "body {\n  color: black; }\n  body div {\n    height: 200px;\n    width: 200px;\n    position: absolute;\n    z-index: 2; }\n    body div.first {\n      background-color: red;\n      color: black;\n      border: 2px solid black; }\n    body div.second {\n      background-color: blue;\n      border: 2px solid black;\n      top: 200px;\n      color: black; }\n    body div.third {\n      background-color: yellow;\n      color: black;\n      border: 2px solid black;\n      top: 400px; }\n    body div.newpos {\n      z-index: 5; }\n    body div.middlepos {\n      z-index: 4; }\n    body div.milepos {\n      z-index: 3; }\n", ""]);
 
 // exports
 

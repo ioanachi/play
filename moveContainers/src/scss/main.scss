@@ -32,7 +32,12 @@ body {
       z-index: 5;
     }
     &.middlepos{
+      z-index:4;
+    }
+    &.milepos{
       z-index:3;
+
+
     }
   }
 }
