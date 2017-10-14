@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>yf</title>\r\n</head>\r\n\r\n<body>\r\n\r\n\r\n      <div class=\"first\">\r\n\r\n\r\n      </div>\r\n      <div class=\"second\">\r\n\r\n      </div>\r\n      <div class=\"third\">\r\n\r\n      </div>\r\n      </div>\r\n\r\n\r\n\r\n\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>yf</title>\r\n</head>\r\n\r\n<body>\r\n\r\n\r\n  <div class=\"first\">\r\n<p>Drag Me</p>\r\n\r\n  </div>\r\n  <div class=\"second\">\r\n    <p>Drop Me</p>\r\n\r\n  </div>\r\n  <div class=\"third\">\r\n    <p>Drag and drop Me</p>\r\n\r\n  </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  color: black; }\n  body div {\n    height: 200px;\n    width: 200px; }\n    body div.first {\n      background-color: red;\n      border: 2px solid black; }\n    body div.second {\n      background-color: blue;\n      border: 2px solid black; }\n    body div.third {\n      background-color: yellow;\n      border: 2px solid black; }\n    body div.newpos {\n      position: absolute;\n      z-index: 2; }\n", ""]);
+exports.push([module.i, "body {\n  color: black; }\n  body div {\n    height: 200px;\n    width: 200px;\n    position: absolute;\n    z-index: 2; }\n    body div.first {\n      background-color: red;\n      color: black;\n      border: 2px solid black; }\n    body div.second {\n      background-color: blue;\n      border: 2px solid black;\n      top: 200px;\n      color: black; }\n    body div.third {\n      background-color: yellow;\n      color: black;\n      border: 2px solid black;\n      top: 400px; }\n    body div.newpos {\n      z-index: 5; }\n    body div.middlepos {\n      z-index: 3; }\n", ""]);
 
 // exports
 
@@ -695,13 +695,17 @@ $("document").ready(function () {
   var clicked = false;
   var difx;
   var dify;
-  var xfirst = $(".first");
+  var xfirst = $("div");
+
+  var clickedDiv;
 
   xfirst.mousedown(function (e) {
     clicked = true;
+    xfirst.removeClass("middlepos");
+
     var mousex = e.clientX;
     var mousey = e.clientY;
-    var posfirst = xfirst.position();
+    var posfirst = $(this).position();
     var posx = posfirst.left;
     var posy = posfirst.top;
     console.log("mouse position :", mousex, mousey);
@@ -709,6 +713,8 @@ $("document").ready(function () {
     difx = mousex - posx;
     dify = mousey - posy;
     console.log("difference :", difx, dify);
+    $(this).addClass("newpos");
+    clickedDiv = $(this);
   });
 
   $("html").mousemove(function (e) {
@@ -721,13 +727,14 @@ $("document").ready(function () {
     var divposy = mouseY - dify;
     console.log("new position for the first:", divposx, divposy);
     if (clicked) {
-      xfirst.css("left", divposx).addClass(".newpos");
-      xfirst.css("top", divposy).addClass(".newpos");
+      clickedDiv.css("left", divposx);
+      clickedDiv.css("top", divposy);
     }
   });
-  $("first").mouseup(function (e) {
+  xfirst.mouseup(function (e) {
     clicked = false;
-    xfirst.removeClass(".newpos");
+    clickedDiv.removeClass("newpos");
+    clickedDiv.addClass("middlepos");
   });
 });
 

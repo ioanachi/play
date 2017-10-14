@@ -4,26 +4,35 @@ body {
   div {
     height: 200px;
     width: 200px;
+    position: absolute;
+    z-index: 2;
 
     &.first {
       background-color: red;
+      color: black;
       border: 2px solid black;
     }
 
     &.second {
       background-color: blue;
       border: 2px solid black;
+      top: 200px;
+      color: black;
+
     }
 
     &.third {
       background-color: yellow;
+      color: black;
       border: 2px solid black;
+      top: 400px;
     }
-    &.newpos{
-position: absolute;
-z-index: 2;
 
-
+    &.newpos {
+      z-index: 5;
+    }
+    &.middlepos{
+      z-index:3;
     }
   }
 }
