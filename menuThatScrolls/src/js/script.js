@@ -4,21 +4,22 @@ $("document").ready(function() {
   var clicked = false;
   var difx;
   var dify;
-  var xbutton = $(".menu");
+  var xmenu = $(".menu");
 
 
-  xbutton.mousedown(function(e) {
+  xmenu.mousedown(function(e) {
     clicked = true;
     var mousex = e.clientX;
     var mousey = e.clientY;
-    var posButton = xbutton.position();
-    var posx = posButton.left;
-    var posy = posButton.top;
+    var posmenu = xmenu.position();
+    var posx = posmenu.left;
+    var posy = posmenu.top;
     console.log("mouse position :", mousex, mousey);
-    console.log("button position :", posx, posy);
+    console.log("menu position :", posx, posy);
     difx = mousex - posx;
     dify = mousey - posy;
     console.log("difference :", difx, dify);
+    xmenu.addClass("newpos");
   });
 
   $("html").mousemove(function(e) {
@@ -29,16 +30,18 @@ $("document").ready(function() {
 
     var butposx = mouseX - difx;
     var butposy = mouseY - dify;
-    console.log("new position for the button:", butposx, butposy);
+    console.log("new position for the menu:", butposx, butposy);
     if (clicked) {
-      xbutton.css("left", butposx);
-      xbutton.css("top", butposy);
+      xmenu.css("left", butposx);
+      xmenu.css("top", butposy);
     }
 
 
   });
   $(".menu").mouseup(function(e) {
     clicked = false;
+    xmenu.removeClass("newpos");
+
 
 
 
