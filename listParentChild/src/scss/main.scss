@@ -1,41 +1,36 @@
 body {
   background: white;
-.container{
-  position: static;
-  div{
+
+  .container {
     position: static;
 
-  .menu {
-    min-width: 800px;
-    width: auto;
-    position: fixed;
-    z-index: 2;
-    background: white;
-    -webkit-box-shadow: 0 5px 24px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 5px 24px -7px rgba(0,0,0,0.75);
-    box-shadow: 0 5px 24px -7px rgba(0,0,0,0.75);
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border: 1px groove #e4e4e4;
+    div {
+      position: static;
 
-    li {
-      display: table;
-      list-style: none;
-      padding: 10px 13px;
+      .menu {
+        min-width: 800px;
+        width: auto;
+        position: fixed;
+        z-index: 2;
+        background: white;
+        -webkit-box-shadow: 0 5px 24px -7px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 5px 24px -7px rgba(0,0,0,0.75);
+        box-shadow: 0 5px 24px -7px rgba(0,0,0,0.75);
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border: 1px groove #e4e4e4;
 
-      a {
-        padding: 9px;
+        li {
+          display: table;
+          list-style: none;
+          padding: 10px 13px;
 
-
+          a {
+            padding: 9px;
+          }
+        }
       }
     }
-
   }
-
-
-
-
-  }
-}
 }
