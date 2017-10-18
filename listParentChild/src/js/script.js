@@ -11,17 +11,25 @@ clicked = true;
 });
 
 
-var alb = $(".albastru a");
+var alb = $(".albastru");
 console.log(alb, "albbbbb");
-
+var aaa = false
 var parinte = $(".parinte");
 parinte.click(function(){
-  if (clicked) {
-    $(".rosu a").removeClass("read");
-  }
+
+  console.log("intra", alb);
 alb.addClass("yell");
+aaa = true;
+});
 
 
+
+$("button").click(function(){
+
+  if (clicked || aaa) {
+    $(".rosu a").removeClass("read");
+    alb.removeClass("yell");
+  };
 
 });
 

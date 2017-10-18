@@ -9,6 +9,9 @@ body {
       list-style: none;
       padding: 10px 13px;
 
+      &.yell {
+        color: blue;
+      }
 
 
       a {
@@ -18,9 +21,6 @@ body {
           color: red;
         }
 
-        &.yell {
-          color: blue;
-        }
 
       }
     }

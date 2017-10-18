@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title></title>\r\n</head>\r\n<body>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12\">\r\n        <div class=\"menu\">\r\n          <ul>\r\n            <li><a href=\"#\">Inbox</a></li>\r\n            <li><a href=\"#\">Tasks</a></li>\r\n            <li><a href=\"#\">Theme</a></li>\r\n            <li><a href=\"#\">Home</a></li>\r\n            <li><a href=\"#\">Name</a></li>\r\n            <li><a href=\"#\">Implement</a>\r\n              <ul>\r\n                <li class=\"parinte\"><a href=\"#\">Inbox</a></li>\r\n                <li class=\"parinte\"><a href=\"#\">Tasks</a></li>\r\n                <li class=\"parinte\"><a href=\"#\">Theme</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Menu</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Name</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Implement</a>\r\n                  <ul class=\"rosu\">\r\n                    <li><a href=\"#\">Inbox</a></li>\r\n                    <li><a href=\"#\">Tasks</a></li>\r\n                    <li><a href=\"#\">Theme</a></li>\r\n                    <li><a href=\"#\">Menu</a></li>\r\n                    <li><a href=\"#\">Name</a></li>\r\n                    <li><a href=\"#\">Implement</a></li>\r\n                  </ul>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title></title>\r\n</head>\r\n<body>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12\">\r\n        <div class=\"menu\">\r\n          <ul >\r\n            <li class = \"albastru\">Inbox</li>\r\n            <li class = \"albastru\">Tasks</li>\r\n            <li class = \"albastru\">Theme</li>\r\n            <li class = \"albastru\">Home</li>\r\n            <li class = \"albastru\">Name</li>\r\n            <li class = \"albastru\">Implement\r\n              <ul>\r\n                <li class=\"parinte\"><a href=\"#\">Inbox</a></li>\r\n                <li class=\"parinte\"><a href=\"#\">Tasks</a></li>\r\n                <li class=\"parinte\"><a href=\"#\">Theme</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Menu</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Name</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Implement</a>\r\n                  <ul class=\"rosu\">\r\n                    <li><a href=\"#\">Inbox</a></li>\r\n                    <li><a href=\"#\">Tasks</a></li>\r\n                    <li><a href=\"#\">Theme</a></li>\r\n                    <li><a href=\"#\">Menu</a></li>\r\n                    <li><a href=\"#\">Name</a></li>\r\n                    <li><a href=\"#\">Implement</a></li>\r\n                  </ul>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <button type=\"button\" name=\"button\">Reset</button>\r\n  </div>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n</html>\r\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background: white; }\n  body .container {\n    position: static; }\n    body .container li {\n      display: table;\n      list-style: none;\n      padding: 10px 13px; }\n      body .container li a {\n        padding: 9px;\n        color: black; }\n        body .container li a.read {\n          color: red; }\n        body .container li a.yell {\n          color: blue; }\n", ""]);
+exports.push([module.i, "body {\n  background: white; }\n  body .container {\n    position: static; }\n    body .container li {\n      display: table;\n      list-style: none;\n      padding: 10px 13px; }\n      body .container li.yell {\n        color: blue; }\n      body .container li a {\n        padding: 9px;\n        color: black; }\n        body .container li a.read {\n          color: red; }\n", ""]);
 
 // exports
 
@@ -701,15 +701,23 @@ $("document").ready(function () {
     clicked = true;
   });
 
-  var alb = $(".albastru a");
+  var alb = $(".albastru");
   console.log(alb, "albbbbb");
-
+  var aaa = false;
   var parinte = $(".parinte");
   parinte.click(function () {
-    if (clicked) {
-      $(".rosu a").removeClass("read");
-    }
+
+    console.log("intra", alb);
     alb.addClass("yell");
+    aaa = true;
+  });
+
+  $("button").click(function () {
+
+    if (clicked || aaa) {
+      $(".rosu a").removeClass("read");
+      alb.removeClass("yell");
+    };
   });
 });
 
