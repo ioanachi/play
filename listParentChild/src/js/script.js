@@ -1,50 +1,29 @@
 var $ = require("jquery");
 $("document").ready(function() {
-
+  var copil = $(".problema");
+  var cil =   copil.find("ul");
+  console.log(cil);
   var clicked = false;
-  var difx;
-  var dify;
-  var xmenu = $(".menu");
+copil.click(function(){
+
+$(".rosu a").addClass("read");
+clicked = true;
+});
 
 
-  xmenu.mousedown(function(e) {
-    clicked = true;
-    var mousex = e.clientX;
-    var mousey = e.clientY;
-    var posmenu = xmenu.position();
-    var posx = posmenu.left;
-    var posy = posmenu.top;
-    console.log("mouse position :", mousex, mousey);
-    console.log("menu position :", posx, posy);
-    difx = mousex - posx;
-    dify = mousey - posy;
-    console.log("difference :", difx, dify);
-    xmenu.addClass("newpos");
-  });
+var alb = $(".albastru a");
+console.log(alb, "albbbbb");
 
-  $("html").mousemove(function(e) {
-    var mouseX = e.clientX;
-    var mouseY = e.clientY;
-    console.log("--------------------mouse position :", mouseX, mouseY);
-    console.log("====================difference position :", difx, dify);
-
-    var butposx = mouseX - difx;
-    var butposy = mouseY - dify;
-    console.log("new position for the menu:", butposx, butposy);
-    if (clicked) {
-      xmenu.css("left", butposx);
-      xmenu.css("top", butposy);
-    }
-
-
-  });
-  $(".menu").mouseup(function(e) {
-    clicked = false;
-    xmenu.removeClass("newpos");
+var parinte = $(".parinte");
+parinte.click(function(){
+  if (clicked) {
+    $(".rosu a").removeClass("read");
+  }
+alb.addClass("yell");
 
 
 
+});
 
 
-  });
 });

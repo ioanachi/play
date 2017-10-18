@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title></title>\r\n</head>\r\n<body>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12\">\r\n        <div class=\"menu\">\r\n          <ul>\r\n            <li><a href=\"#\">Inbox</a></li>\r\n            <li><a href=\"#\">Tasks</a></li>\r\n            <li><a href=\"#\">Theme</a></li>\r\n            <li><a href=\"#\">Menu</a></li>\r\n            <li><a href=\"#\">Name</a></li>\r\n            <li><a href=\"#\">Implement</a>\r\n              <ul>\r\n                <li><a href=\"#\">Inbox</a></li>\r\n                <li><a href=\"#\">Tasks</a></li>\r\n                <li><a href=\"#\">Theme</a></li>\r\n                <li><a href=\"#\">Menu</a></li>\r\n                <li><a href=\"#\">Name</a></li>\r\n                <li><a href=\"#\">Implement</a>\r\n                  <ul>\r\n                    <li><a href=\"#\">Inbox</a></li>\r\n                    <li><a href=\"#\">Tasks</a></li>\r\n                    <li><a href=\"#\">Theme</a></li>\r\n                    <li><a href=\"#\">Menu</a></li>\r\n                    <li><a href=\"#\">Name</a></li>\r\n                    <li><a href=\"#\">Implement</a></li>\r\n                  </ul>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title></title>\r\n</head>\r\n<body>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12\">\r\n        <div class=\"menu\">\r\n          <ul>\r\n            <li><a href=\"#\">Inbox</a></li>\r\n            <li><a href=\"#\">Tasks</a></li>\r\n            <li><a href=\"#\">Theme</a></li>\r\n            <li><a href=\"#\">Home</a></li>\r\n            <li><a href=\"#\">Name</a></li>\r\n            <li><a href=\"#\">Implement</a>\r\n              <ul>\r\n                <li class=\"parinte\"><a href=\"#\">Inbox</a></li>\r\n                <li class=\"parinte\"><a href=\"#\">Tasks</a></li>\r\n                <li class=\"parinte\"><a href=\"#\">Theme</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Menu</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Name</a></li>\r\n                <li class=\"problema\"><a href=\"#\">Implement</a>\r\n                  <ul class=\"rosu\">\r\n                    <li><a href=\"#\">Inbox</a></li>\r\n                    <li><a href=\"#\">Tasks</a></li>\r\n                    <li><a href=\"#\">Theme</a></li>\r\n                    <li><a href=\"#\">Menu</a></li>\r\n                    <li><a href=\"#\">Name</a></li>\r\n                    <li><a href=\"#\">Implement</a></li>\r\n                  </ul>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n</html>\r\n";
 
 /***/ }),
 /* 6 */
@@ -677,7 +677,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background: white; }\n  body .container {\n    position: static; }\n    body .container div {\n      position: static; }\n      body .container div .menu {\n        min-width: 800px;\n        width: auto;\n        position: fixed;\n        z-index: 2;\n        background: white;\n        -webkit-box-shadow: 0 5px 24px -7px rgba(0, 0, 0, 0.75);\n        -moz-box-shadow: 0 5px 24px -7px rgba(0, 0, 0, 0.75);\n        box-shadow: 0 5px 24px -7px rgba(0, 0, 0, 0.75);\n        border-radius: 10px 10px 10px 10px;\n        -moz-border-radius: 10px 10px 10px 10px;\n        -webkit-border-radius: 10px 10px 10px 10px;\n        border: 1px groove #e4e4e4; }\n        body .container div .menu li {\n          display: table;\n          list-style: none;\n          padding: 10px 13px; }\n          body .container div .menu li a {\n            padding: 9px; }\n", ""]);
+exports.push([module.i, "body {\n  background: white; }\n  body .container {\n    position: static; }\n    body .container li {\n      display: table;\n      list-style: none;\n      padding: 10px 13px; }\n      body .container li a {\n        padding: 9px;\n        color: black; }\n        body .container li a.read {\n          color: red; }\n        body .container li a.yell {\n          color: blue; }\n", ""]);
 
 // exports
 
@@ -691,44 +691,25 @@ exports.push([module.i, "body {\n  background: white; }\n  body .container {\n  
 
 var $ = __webpack_require__(16);
 $("document").ready(function () {
-
+  var copil = $(".problema");
+  var cil = copil.find("ul");
+  console.log(cil);
   var clicked = false;
-  var difx;
-  var dify;
-  var xmenu = $(".menu");
+  copil.click(function () {
 
-  xmenu.mousedown(function (e) {
+    $(".rosu a").addClass("read");
     clicked = true;
-    var mousex = e.clientX;
-    var mousey = e.clientY;
-    var posmenu = xmenu.position();
-    var posx = posmenu.left;
-    var posy = posmenu.top;
-    console.log("mouse position :", mousex, mousey);
-    console.log("menu position :", posx, posy);
-    difx = mousex - posx;
-    dify = mousey - posy;
-    console.log("difference :", difx, dify);
-    xmenu.addClass("newpos");
   });
 
-  $("html").mousemove(function (e) {
-    var mouseX = e.clientX;
-    var mouseY = e.clientY;
-    console.log("--------------------mouse position :", mouseX, mouseY);
-    console.log("====================difference position :", difx, dify);
+  var alb = $(".albastru a");
+  console.log(alb, "albbbbb");
 
-    var butposx = mouseX - difx;
-    var butposy = mouseY - dify;
-    console.log("new position for the menu:", butposx, butposy);
+  var parinte = $(".parinte");
+  parinte.click(function () {
     if (clicked) {
-      xmenu.css("left", butposx);
-      xmenu.css("top", butposy);
+      $(".rosu a").removeClass("read");
     }
-  });
-  $(".menu").mouseup(function (e) {
-    clicked = false;
-    xmenu.removeClass("newpos");
+    alb.addClass("yell");
   });
 });
 
