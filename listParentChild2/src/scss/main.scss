@@ -1,0 +1,21 @@
+body {
+  background: white;
+
+  .container {
+    position: static;
+
+    li {
+      display: table;
+      list-style: none;
+      padding: 10px 13px;
+
+      &.bluex {
+        color: blue;
+      }
+
+      &.read {
+        color: red;
+      }
+    }
+  }
+}
