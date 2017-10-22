@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <form class="validate-form">
+    <h1>Simple-validation form</h1>
+    <div>
+      <div class="input-holder">
+        <span>*</span>
+        <input type="text" placeholder="Username" class="validate" required/>
+        <span class="message">Username:</span>
+      </div>
+      <div class="input-holder">
+        <span>*</span>
+
+        <input type="text" name="password" id="password" placeholder="Password" class="validate" required/>
+        <span class="message">Password:</span>
+      </div>
+      <div class="input-holder">
+        <span>*</span>
+        <input name="repassword" id="repassword" type="text" placeholder="Verify password" class="validate" required/>
+        <span class="message"> Same Password:</span>
+      </div>
+      <div class="input-holder">
+        <span>*</span>
+        <input type="email" placeholder="Valid email address" class="validate" required/>
+        <span class="message">Valid email address:</span>
+      </div>
+      <div class="input-holder">
+        <textarea class="validate" placeholder="Describe Yourself"></textarea>
+        <span class="message"></span>
+      </div>
+    </div>
+    <button class="submit">Submit</button>
+    <span>*</span><h5>Required fields</h5>
+  </form>
+  <script src="./dist/commons.js"></script>
+  <script src="./dist/bundle.js"></script>
+</body>
+</body>
+
+</html>

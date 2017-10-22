@@ -130,13 +130,14 @@ console.log(liunu, middleLi, firstUl, 'middleLi');
     console.log(firstUl,'mustkkkkkkkkkkkkkkkkk');
   });
 // se repeta functia de 3 ori pt ca, daca o bag in loop nu face functia click pe arr[i]
-// for (var i = 3; i < middleLi.length; i++) {
-// var liMiddle =  middleLi[i];
-// }
-// liMiddle.click(function() {
-//   primul.addClass('read');
-//   console.log("de ce nu merge???????????")
-// });
+for (var i = 3; i < middleLi.length; i++) {
+var liMiddle =  middleLi[i];
+console.log($(liMiddle));
+}
+$(liMiddle).click(function() {
+  primul.addClass('read');
+  console.log("de ce nu merge???????????")
+});
 
 var lidoi =$(middleLi[1]);
 
@@ -165,7 +166,7 @@ liFive.click(function() {
 
 var liSix = $(middleLi[5]);
 var liSixChild = liSix.children();
-console.log(liSixChild);
+console.log(liSixChild, "");
 liSix.click(function() {
   primul.addClass('read');
 });
