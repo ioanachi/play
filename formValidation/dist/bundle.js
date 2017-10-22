@@ -10733,7 +10733,7 @@ __webpack_require__(16);
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title></title>\r\n</head>\r\n\r\n<body>\r\n\r\n  <form class=\"validate-form\">\r\n    <h1>Simple-validation form</h1>\r\n    <div>\r\n      <div class=\"input-holder\">\r\n        <span>*</span>\r\n        <input type=\"text\" placeholder=\"Username\" class=\"validate\" required/>\r\n        <span class=\"message\">Username:</span>\r\n      </div>\r\n      <div class=\"input-holder\">\r\n        <span>*</span>\r\n\r\n        <input type=\"text\" name=\"password\" id=\"password\" placeholder=\"Password\" class=\"validate\" required/>\r\n        <span class=\"message\">Password:</span>\r\n      </div>\r\n      <div class=\"input-holder\">\r\n        <span>*</span>\r\n        <input name=\"repassword\" id=\"repassword\" type=\"text\" placeholder=\"Verify password\" class=\"validate\" required/>\r\n        <span class=\"message\"> Same Password:</span>\r\n      </div>\r\n      <div class=\"input-holder\">\r\n        <span>*</span>\r\n        <input type=\"email\" placeholder=\"Valid email address\" class=\"validate\" required/>\r\n        <span class=\"message\">Valid email address:</span>\r\n      </div>\r\n      <div class=\"input-holder\">\r\n        <textarea class=\"validate\" placeholder=\"Describe Yourself\"></textarea>\r\n        <span class=\"message\"></span>\r\n      </div>\r\n    </div>\r\n    <button class=\"submit\">Submit</button>\r\n    <span>*</span><h5>Required fields</h5>\r\n  </form>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n</body>\r\n\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title></title>\r\n</head>\r\n\r\n<body>\r\n\r\n  <form class=\"validate-form\">\r\n    <h1>Simple-validation form</h1>\r\n    <div>\r\n      <div class=\"input-holder\">\r\n        <span>*</span>\r\n        <input type=\"text\" placeholder=\"Username\" class=\"validate\" required/>\r\n        <span class=\"message\">Username:</span>\r\n      </div>\r\n      <div class=\"input-holder\">\r\n        <span>*</span>\r\n\r\n        <input type=\"password\" maxlength=\"8\" name=\"password\" id=\"password\" placeholder=\"Password 8 characters\" class=\"validate\" required/>\r\n        <span class=\"message\">Password:</span>\r\n      </div>\r\n      <div class=\"input-holder\">\r\n        <span>*</span>\r\n        <input name=\"repassword\" maxlength=\"8\" id=\"confirm_password\" type=\"password\" placeholder=\"Verify password\" class=\"validate\" required/>\r\n        <span class=\"message\"> You need to introduce the same Password:</span>\r\n      </div>\r\n      <div class=\"input-holder\">\r\n        <span>*</span>\r\n        <input type=\"email\" placeholder=\"Valid email address\" class=\"validate\" required/>\r\n        <span class=\"message\">Valid email address:</span>\r\n      </div>\r\n      <div class=\"input-holder\">\r\n        <textarea class=\"validate\" placeholder=\"Describe Yourself\"></textarea>\r\n        <span class=\"message\"></span>\r\n      </div>\r\n    </div>\r\n    <button class=\"submit\">Submit</button>\r\n    <span>*</span><h5>Required fields</h5>\r\n  </form>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 7 */
@@ -10972,6 +10972,19 @@ $("document").ready(function () {
         // Adding Inputs to object, false for default
         validate['input' + i] = false;
       }
+      var password = document.getElementById("password"),
+          confirm_password = document.getElementById("confirm_password");
+
+      function validatePassword() {
+        if (password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity('');
+        }
+      }
+
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
 
       $('.validate').blur(function () {
         var index = $(this).prevAll().length + 1;
@@ -11026,22 +11039,24 @@ $("document").ready(function () {
         } else {}
       });
     });
+    //   $('input').blur(function() {
+    //     var pass = $('input[name=password]').val();
+    //     var repass = $('input[name=repassword]').val();
+    //     if(($('input[name=password]').val().length == 0) || ($('input[name=repassword]').val().length == 0)){
+    //         $('#password').addClass('not-valid');
+    //     }
+    //     else if (pass != repass) {
+    //         $('#password').addClass('not-valid');
+    //         $('#repassword').addClass('not-valid');
+    //     }
+    //     else {
+    //         $('#password').removeClass().addClass('is-valid');
+    //         $('#repassword').removeClass().addClass('is-valid');
+    //     }
+    // });
   };
 
   simpleValidation();
-  $('input').blur(function () {
-    var pass = $('input[name=password]').val();
-    var repass = $('input[name=repassword]').val();
-    if ($('input[name=password]').val().length == 0 || $('input[name=repassword]').val().length == 0) {
-      $('#password').addClass('not-valid');
-    } else if (pass != repass) {
-      $('#password').addClass('not-valid');
-      $('#repassword').addClass('not-valid');
-    } else {
-      $('#password').removeClass().addClass('is-valid');
-      $('#repassword').removeClass().addClass('is-valid');
-    }
-  });
 });
 
 /***/ })
