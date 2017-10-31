@@ -18,7 +18,7 @@ $("document").ready(function() {
 
       name = arrNames[i];
       console.log(name, "name");
-var butTon = "<button><img src=\"\" alt=\"\"><img src=\"./img/del.png\" alt=\"poza\"></button>";
+      var butTon = "<button></button>";
 
       var liLi = "<li>" + name + "  " + butTon + "</li>";
       console.log(liLi, "liLi");

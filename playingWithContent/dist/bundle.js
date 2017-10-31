@@ -10733,7 +10733,7 @@ __webpack_require__(16);
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Second Layout</title>\r\n</head>\r\n\r\n<body>\r\n  <div class=\"container\">\r\n    <ul class=\"ulli\">\r\n\r\n    </ul>\r\n  </div>\r\n  <div>\r\n    <button class=\"Bcreate\"> button</button>\r\n  </div>\r\n  <img src=\"xxxHTMLLINKxxx0.29726428997365150.6653172550866988xxx\" alt=\"\">\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Second Layout</title>\r\n</head>\r\n\r\n<body>\r\n  <div class=\"container\">\r\n    <ul class=\"ulli\">\r\n\r\n    </ul>\r\n  </div>\r\n  <div>\r\n    <button class=\"Bcreate\"> button</button>\r\n  </div>\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 7 */
@@ -10939,7 +10939,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "body ul li button {\n  background: url(" + __webpack_require__(17) + ");\n  background-size: contain;\n  border: 0px solid blue;\n  height: 20px;\n  width: 20px; }\n", ""]);
 
 // exports
 
@@ -10971,7 +10971,7 @@ $("document").ready(function () {
 
       name = arrNames[i];
       console.log(name, "name");
-      var butTon = "<button><img src=\"\" alt=\"\"><img src=\"./img/del.png\" alt=\"poza\"></button>";
+      var butTon = "<button></button>";
 
       var liLi = "<li>" + name + "  " + butTon + "</li>";
       console.log(liLi, "liLi");
@@ -10988,6 +10988,12 @@ $("document").ready(function () {
     }
   });
 });
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAjVJREFUOI2tlM1PE1EUxc90pjNT0xbpx9RpIYSALohi1elCTdyY0MTE0AQbwsIVC9bijgUuCQtY6IIFCX+AH2mMSbULG3cubBAlhPAhMS1taatWKEynnemMG8AyYCu0JznJy325v5fz8t4lcLLYYPuFQb/b2e9ttQpOluUBICdJ6YX8TuxdOhd6Gd96AUDSNxL6QqCNG3pyuXvKxTL8Pw4DAGQkKTX+de3Rm9SP59V1sno92XtpZqync8JMkRZAQy2bKdJy38MFbQzNRTO/Ivsbf4GTV7pmHnbyI/VAel87b/bZGKMjmsmHD4EB3jE01tMxcVpYNXR1t7i8WhCXCADs57vXNziWrnln9ZSWyknh/XwXFXTbBjmG5KFVGuGBZ0jPgMcepPpcrf3Q1IZgB/I7WwKUt4URmgW8ajUJlJM2HIlL8m0w3emr360BxQ9vUcmmD0su2sBTUNWjz1tRAFkGiGNvXgfUgEoFUKvSqRqIT7e7426Tsf0/U9VUolj+bljYEWPQVDTDX7bFmCGSK4SaBYxk90IEAHb+Zsc3F0u6G4mbkpSE72P8IglA2ZKU5D3nuQfQNJzVoyvZ4XVRWSQBYEWUl+wUwXktRt9Z/vLcZuHZbLIwDVRNm2heitgpwnFa6Fyq8HR84/co9OMLgBbNl8Jrorx8w2K8ZSEJay1QsiQnHq9vD89u7k4fwIATJva+mAGODfptdKDXbBRctIEHgHRJTS3uybFwrhx6/VN6BaCkb/wDPLVmTfxtlxgAAAAASUVORK5CYII="
 
 /***/ })
 ],[4]);

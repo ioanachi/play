@@ -1,1 +1,13 @@
-
+body {
+  ul {
+    li {
+      button {
+        background: url("../img/del.png");
+        background-size: contain;
+        border: 0px solid blue;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
