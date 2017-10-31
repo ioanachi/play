@@ -10733,7 +10733,7 @@ __webpack_require__(16);
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Second Layout</title>\r\n</head>\r\n\r\n<body>\r\n<button type=\"button\" class=\"firstbutton\" name=\"button\">Create an Ajax request</button>\r\n<div class=\"raspuns \">\r\n\r\n<div class=\"content\">\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Second Layout</title>\r\n</head>\r\n\r\n<body>\r\n  <div class=\"container\">\r\n    <ul class=\"ulli\">\r\n\r\n    </ul>\r\n  </div>\r\n  <div>\r\n    <button class=\"Bcreate\"> button</button>\r\n  </div>\r\n  <img src=\"xxxHTMLLINKxxx0.29726428997365150.6653172550866988xxx\" alt=\"\">\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 7 */
@@ -10953,46 +10953,39 @@ exports.push([module.i, "", ""]);
 
 var $ = __webpack_require__(3);
 $("document").ready(function () {
-  var cutie = $(".raspuns");
-  var buttOn = $(".firstbutton");
-  var texts = $(".content");
-  console.log($.prototype);
+  var names = {
+    allNames: function allNames() {
+      return ['Ioana Chichernea', 'Ciprian Turcu', 'Mara Mere', 'Elon Musk', 'Steve Jobs', 'Javascript Code'];
+    }
+  };
+  console.log(names.allNames(), "names");
 
-  buttOn.click(function () {
-    var objx = {
-      url: 'http://ioanachichernea.com/',
-      type: "get",
-      success: function success(response) {
-        document.write(response);
-        console.log(response, 'response');
-        var date = '';
+  var arrNames = names.allNames();
+  var name;
+  var ul = $(".ulli");
+  // var ww = true;
+  $(".Bcreate").click(function () {
+    // if (ww) {
+    ul.html("");
+    for (var i = 0; i < arrNames.length; i++) {
 
-        for (var i = 0; i < response.length; i++) {
-          console.log(i, 'i');
+      name = arrNames[i];
+      console.log(name, "name");
+      var butTon = "<button><img src=\"\" alt=\"\"><img src=\"./img/del.png\" alt=\"poza\"></button>";
 
-          var name = "<h2>" + response[i].name + "</h2>";
-          console.log(name, 'name');
-
-          var owner = "<p> Owner:" + response[i].owner.login + "</p>";
-          console.log(owner, 'owner');
-
-          var ownerUrl = "<p> Owner Url: <a href= " + response[i].owner.url + " target=_blanch>" + response[i].owner.url + "<a></p>";
-          console.log(ownerUrl, 'ownerUrl');
-
-          var htmlLink = "<p><a href=" + response[i].url + " target=_blanch>" + response[i].url + "</a></p>";
-          console.log(htmlLink, 'htmlLink');
-
-          date += name + owner + ownerUrl + htmlLink;
-        }
-        cutie.html(date);
-        // texts.append(date);
-      },
-      error: function error(xhr) {
-        cutie.html(xhr);
-      }
-    };
-
-    $.ajax(objx);
+      var liLi = "<li>" + name + "  " + butTon + "</li>";
+      console.log(liLi, "liLi");
+      ul.append(liLi);
+      // ww = false;
+      // }
+    }
+    var copii = $(document).find("button");
+    for (var x = 0; x < copii.length; x++) {
+      copii.click(function () {
+        console.log(copii, "copii");
+        $(this).parent().remove();
+      });
+    }
   });
 });
 

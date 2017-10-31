@@ -1,5 +1,6 @@
 var $ = require("jquery");
 $("document").ready(function() {
+
   var cutie = $(".raspuns");
   var buttOn = $(".firstbutton");
   var texts = $(".content");
@@ -7,9 +8,10 @@ $("document").ready(function() {
 
   buttOn.click(function() {
     var objx = {
-      url: 'https://api.github.com/users/ioanachi/repos',
+      url: 'http://ioanachichernea.com/',
       type: "get",
       success: function(response) {
+    document.write(response);
         console.log(response, 'response');
         var date = '';
 
@@ -41,4 +43,5 @@ $("document").ready(function() {
 
     $.ajax(objx);
   })
+
 });
