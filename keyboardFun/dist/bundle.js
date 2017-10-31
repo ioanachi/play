@@ -10727,13 +10727,13 @@ __webpack_require__(14);
 
 __webpack_require__(3);
 
-__webpack_require__(17);
+__webpack_require__(16);
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Second Layout</title>\r\n</head>\r\n\r\n<body>\r\n  <div class=\"container\">\r\n    <ul class=\"ulli\">\r\n\r\n    </ul>\r\n  </div>\r\n  <div>\r\n    <button class=\"Bcreate\"> button</button>\r\n  </div>\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Second Layout</title>\r\n</head>\r\n<body>\r\n<div class=\"box\">\r\n\r\n</div>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 7 */
@@ -10939,19 +10939,13 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body ul li button {\n  background: url(" + __webpack_require__(16) + ");\n  background-size: contain;\n  border: 0px solid blue;\n  height: 20px;\n  width: 20px; }\n", ""]);
+exports.push([module.i, "body .box {\n  position: absolute;\n  background: red;\n  height: 50px;\n  width: 50px; }\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAjVJREFUOI2tlM1PE1EUxc90pjNT0xbpx9RpIYSALohi1elCTdyY0MTE0AQbwsIVC9bijgUuCQtY6IIFCX+AH2mMSbULG3cubBAlhPAhMS1taatWKEynnemMG8AyYCu0JznJy325v5fz8t4lcLLYYPuFQb/b2e9ttQpOluUBICdJ6YX8TuxdOhd6Gd96AUDSNxL6QqCNG3pyuXvKxTL8Pw4DAGQkKTX+de3Rm9SP59V1sno92XtpZqync8JMkRZAQy2bKdJy38MFbQzNRTO/Ivsbf4GTV7pmHnbyI/VAel87b/bZGKMjmsmHD4EB3jE01tMxcVpYNXR1t7i8WhCXCADs57vXNziWrnln9ZSWyknh/XwXFXTbBjmG5KFVGuGBZ0jPgMcepPpcrf3Q1IZgB/I7WwKUt4URmgW8ajUJlJM2HIlL8m0w3emr360BxQ9vUcmmD0su2sBTUNWjz1tRAFkGiGNvXgfUgEoFUKvSqRqIT7e7426Tsf0/U9VUolj+bljYEWPQVDTDX7bFmCGSK4SaBYxk90IEAHb+Zsc3F0u6G4mbkpSE72P8IglA2ZKU5D3nuQfQNJzVoyvZ4XVRWSQBYEWUl+wUwXktRt9Z/vLcZuHZbLIwDVRNm2heitgpwnFa6Fyq8HR84/co9OMLgBbNl8Jrorx8w2K8ZSEJay1QsiQnHq9vD89u7k4fwIATJva+mAGODfptdKDXbBRctIEHgHRJTS3uybFwrhx6/VN6BaCkb/wDPLVmTfxtlxgAAAAASUVORK5CYII="
-
-/***/ }),
-/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10959,40 +10953,48 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACN
 
 var $ = __webpack_require__(3);
 $("document").ready(function () {
-  var names = {
-    allNames: function allNames() {
-      return ['Ioana Chichernea', 'Ciprian Turcu', 'Mara Mere', 'Elon Musk', 'Steve Jobs', 'Javascript Code'];
-    }
-  };
-  console.log(names.allNames(), "names");
-
-  var arrNames = names.allNames();
-  var name;
-  var ul = $(".ulli");
-  // var ww = true;
-  $(".Bcreate").click(function () {
-    // if (ww) {
-    ul.html("");
-    for (var i = 0; i < arrNames.length; i++) {
-
-      name = arrNames[i];
-      console.log(name, "name");
-      var butTon = "<button></button>";
-
-      var liLi = "<li>" + name + "  " + butTon + "</li>";
-      console.log(liLi, "liLi");
-      ul.append(liLi);
-      // ww = false;
-      // }
-    }
-    var copii = $(document).find("button");
-    for (var x = 0; x < copii.length; x++) {
-      copii.click(function () {
-        console.log(copii, "copii");
-        $(this).parent().remove();
-      });
-    }
-  });
+    //   $(document).keydown(function(e) {
+    //     switch (e.which) {
+    //     case 37:
+    //         $('div').stop().animate({
+    //             left: '-=40'
+    //         }); //left arrow key
+    //         break;
+    //     case 38:
+    //         $('div').stop().animate({
+    //             top: '-=40'
+    //         }); //up arrow key
+    //         break;
+    //     case 39:
+    //         $('div').stop().animate({
+    //             left: '+=40'
+    //         }); //right arrow key
+    //         break;
+    //     case 40:
+    //         $('div').stop().animate({
+    //             top: '+=40'
+    //         }); //bottom arrow key
+    //         break;
+    //     }
+    // })
+    var box = $('.box');
+    $(document).keydown(function (e) {
+        console.log(e.which);
+        switch (e.which) {
+            case 37:
+                box.css('left', box.offset().left - 10);
+                break;
+            case 38:
+                box.css('top', box.offset().top - 10);
+                break;
+            case 39:
+                box.css('left', box.offset().left + 10);
+                break;
+            case 40:
+                box.css('top', box.offset().top + 10);
+                break;
+        }
+    });
 });
 
 /***/ })
