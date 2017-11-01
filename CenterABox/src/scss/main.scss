@@ -2,21 +2,21 @@ body {
   text-align: center;
 
   .box {
-    position: absolute;
-    z-index: 1;
+    position: relative;
+    margin: 0 auto;
     margin-top: 50%;
     margin-bottom: 50%;
     margin-left: 50%;
     height: 200px;
     width: 200px;
     background: green;
-  }
 
-  .redBox {
-    position: absolute;
-    z-index: 3;
-    height: 50%;
-    width: 50%;
-    background: red !important;
+    .redBox {
+      position: absolute;
+      z-index: 3;
+      height: 50%;
+      width: 50%;
+      background: red !important;
+    }
   }
 }
