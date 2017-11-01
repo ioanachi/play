@@ -11,7 +11,7 @@ $("document").ready(function() {
       url: 'http://ioanachichernea.com/',
       type: "get",
       success: function(response) {
-    document.write(response);
+        document.write(response);
         console.log(response, 'response');
         var date = '';
 
@@ -24,10 +24,10 @@ $("document").ready(function() {
           var owner = "<p> Owner:" + response[i].owner.login + "</p>"
           console.log(owner, 'owner');
 
-          var ownerUrl = "<p> Owner Url: <a href= "+response[i].owner.url+" target=_blanch>"+ response[i].owner.url + "<a></p>"
+          var ownerUrl = "<p> Owner Url: <a href= " + response[i].owner.url + " target=_blanch>" + response[i].owner.url + "<a></p>"
           console.log(ownerUrl, 'ownerUrl');
 
-          var htmlLink = "<p><a href="+response[i].url+" target=_blanch>" + response[i].url + "</a></p>"
+          var htmlLink = "<p><a href=" + response[i].url + " target=_blanch>" + response[i].url + "</a></p>"
           console.log(htmlLink, 'htmlLink');
 
           date += name + owner + ownerUrl + htmlLink;
