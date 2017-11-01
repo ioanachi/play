@@ -1,5 +1,5 @@
 var $ = require("jquery");
-$("document").ready(function() {
+$(document).ready(function() {
   // Get all forms
   var simpleValidation = function() {
 
