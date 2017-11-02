@@ -10733,7 +10733,7 @@ __webpack_require__(16);
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Second Layout</title>\r\n</head>\r\n\r\n<body>\r\n  <div class=\"container container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12\" id=\"firstC\">\r\n        \r\n      </div>\r\n    </div>\r\n  </div>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Second Layout</title>\r\n</head>\r\n\r\n<body>\r\n  <div class=\"box one\">\r\n    <div class=\"redBox\">\r\n    </div>\r\n  </div>\r\n  <div class=\"box three\">\r\n    <div class=\"redBox\">\r\n    </div>\r\n  </div>\r\n  <div class=\"container container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12\" id=\"firstC\">\r\n        <div class=\"box\">\r\n          <div class=\"redBox\">\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"box two\">\r\n    <div class=\"redBox\">\r\n    </div>\r\n  </div>\r\n  <div class=\"box four\">\r\n    <div class=\"redBox\">\r\n    </div>\r\n  </div>\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 7 */
@@ -10939,7 +10939,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  text-align: center; }\n  body .box {\n    position: relative;\n    margin: 0 auto;\n    margin-top: 50%;\n    margin-bottom: 50%;\n    margin-left: 50%;\n    height: 200px;\n    width: 200px;\n    background: green; }\n    body .box .redBox {\n      position: absolute;\n      z-index: 3;\n      height: 50%;\n      width: 50%;\n      background: red !important; }\n", ""]);
+exports.push([module.i, "body,\nhtml {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  body #firstC,\n  html #firstC {\n    justify-content: center;\n    align-items: center;\n    display: flex; }\n  body .box,\n  html .box {\n    position: relative;\n    display: flex;\n    height: 200px;\n    width: 200px;\n    background: green;\n    justify-content: center;\n    align-items: center; }\n    body .box .redBox,\n    html .box .redBox {\n      height: 50px;\n      width: 50px;\n      background: red; }\n    body .box.one,\n    html .box.one {\n      position: absolute;\n      left: 0;\n      top: 0; }\n    body .box.two,\n    html .box.two {\n      position: absolute;\n      right: 0;\n      top: 0; }\n    body .box.three,\n    html .box.three {\n      position: absolute;\n      left: 0;\n      bottom: 0; }\n    body .box.four,\n    html .box.four {\n      position: absolute;\n      right: 0;\n      bottom: 0; }\n", ""]);
 
 // exports
 
@@ -10954,11 +10954,11 @@ exports.push([module.i, "body {\n  text-align: center; }\n  body .box {\n    pos
 var $ = __webpack_require__(3);
 $(document).ready(function () {
 
-  var container = $("#firstC");
-  var content = "<div class=\"box\"></div>";
-  var box = container.append(content);
-  var redBox = "<div class=\"redBox\"></div>";
-  box.append(redBox);
+  // var container = $("#firstC");
+  // var content = "<div class=\"box\">";
+  // content += "<div class=\"redBox\"></div>";
+  // content +='</div>';
+  // container.html(content);
 });
 
 /***/ })

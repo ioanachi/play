@@ -1,22 +1,68 @@
-body {
-  text-align: center;
+body,
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #firstC {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    // .box {
+    //   position: relative;
+    //   display: flex;
+    //   // justify-content aliniaza copii pe orizontala
+    //   justify-content: center;
+    //   // align-items -aliniaza copii pe verticala
+    //   align-items: center;
+    //
+    //   .redBox {
+    //     // align-self se aliniaza pe sine pe verticala
+    //     // align-self: center;
+    //   }
+    // }
+  }
 
   .box {
     position: relative;
-    margin: 0 auto;
-    margin-top: 50%;
-    margin-bottom: 50%;
-    margin-left: 50%;
+    display: flex;
     height: 200px;
     width: 200px;
     background: green;
+    // justify-content aliniaza copii pe orizontala
+    justify-content: center;
+    // align-items -aliniaza copii pe verticala
+    align-items: center;
 
     .redBox {
+      // align-self se aliniaza pe sine pe verticala
+      // align-self: center;
+      height: 50px;
+      width: 50px;
+      background: red;
+    }
+
+    &.one {
       position: absolute;
-      z-index: 3;
-      height: 50%;
-      width: 50%;
-      background: red !important;
+      left: 0;
+      top: 0;
+    }
+    &.two{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &.three{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    &.four{
+      position: absolute;
+      right: 0;
+      bottom: 0;
     }
   }
 }
