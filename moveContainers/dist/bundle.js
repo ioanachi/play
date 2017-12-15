@@ -471,7 +471,7 @@ __webpack_require__(15);
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>yf</title>\r\n</head>\r\n\r\n<body>\r\n\r\n\r\n  <div class=\"first\">\r\n<p>Drag Me</p>\r\n\r\n  </div>\r\n  <div class=\"second\">\r\n    <p>Drop Me</p>\r\n\r\n  </div>\r\n  <div class=\"third\">\r\n    <p>Drag and drop Me</p>\r\n\r\n  </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>yf</title>\r\n</head>\r\n\r\n<body>\r\n  <p>Drag the red container to move</p>\r\n<p>The white one will do nothing</p>\r\n\r\n  <div class=\"first\">\r\n<p>Drag Me</p>\r\n\r\n  </div>\r\n  <div class=\"second\">\r\n    <p>Drop Me</p>\r\n\r\n  </div>\r\n  <div class=\"third\">\r\n    <p>Drag and drop Me</p>\r\n\r\n  </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n  <script src=\"./dist/commons.js\"></script>\r\n  <script src=\"./dist/bundle.js\"></script>\r\n</body>\r\n\r\n</html>\r\n";
 
 /***/ }),
 /* 6 */
