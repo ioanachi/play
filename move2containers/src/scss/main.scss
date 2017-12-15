@@ -6,7 +6,7 @@ body {
       height: 400px;
       width: 400px;
       position: absolute;
-      
+
       background-color: red;
 
       .small {
@@ -17,4 +17,9 @@ body {
       }
     }
   }
+}
+p{
+  align-self: center;
+  justify-content: center;
+  padding-left: 100px;
 }
